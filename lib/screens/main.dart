@@ -30,6 +30,12 @@ class _MainState extends State<Main> with SingleTickerProviderStateMixin {
   }
 
   @override
+  void dispose() {
+    _controller.dispose();
+    super.dispose();
+  }
+
+  @override
   Widget build(BuildContext context) {
     return const Scaffold(
       body: AnimatedPage(
