@@ -15,7 +15,9 @@ class Services extends ConsumerWidget {
       child: Wrap(
         spacing: 10,
         runSpacing: 10,
-        children: services.map((e) => e).toList(),
+        children: services
+            .map((e) => ScaleAnimation(child: e, onTap: () {}))
+            .toList(),
       ),
     );
   }
