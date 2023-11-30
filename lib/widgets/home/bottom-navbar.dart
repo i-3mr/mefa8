@@ -5,6 +5,7 @@ import 'package:mefa8/const.dart';
 import 'package:mefa8/icons/calendar_icon.dart';
 import 'package:mefa8/icons/home_icon.dart';
 import 'package:mefa8/providers/pages.dart';
+import 'package:svg_flutter/svg.dart';
 
 class BottomNavBar extends StatelessWidget {
   final int index;
@@ -50,28 +51,29 @@ class BottomNavBar extends StatelessWidget {
                     : Container(),
               ],
             ),
-            Column(
-              mainAxisAlignment: MainAxisAlignment.center,
-              children: [
-                IconButton(
-                  onPressed: () {
-                    ref.read(PagesProvider.notifier).state = 1;
-                  },
-                  icon: Icon(
-                    FontAwesomeIcons.qrcode,
-                    size: 35,
+            GestureDetector(
+              onTap: () {
+                ref.read(PagesProvider.notifier).state = 1;
+              },
+              child: Column(
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: [
+                  SvgPicture.asset(
+                    "assets/id_card_icon.svg",
                     color: index == 1
                         ? const Color(Const.primaryGreen)
                         : Colors.grey.shade800,
+                    height: 80,
+                    width: 80,
                   ),
-                ),
-                index == 1
-                    ? const CircleAvatar(
-                        radius: 5,
-                        backgroundColor: Color(Const.primaryGreen),
-                      )
-                    : Container(),
-              ],
+                  index == 1
+                      ? const CircleAvatar(
+                          radius: 5,
+                          backgroundColor: Color(Const.primaryGreen),
+                        )
+                      : Container(),
+                ],
+              ),
             ),
             GestureDetector(
               onTap: () {
