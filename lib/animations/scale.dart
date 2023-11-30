@@ -15,8 +15,8 @@ class ScaleAnimation extends StatelessWidget {
       child: AnimatedBuilder(
         animation: _scaleNotifier,
         builder: (context, _) => AnimatedScale(
-          scale: _scaleNotifier.value ? 0.95 : 1,
-          duration: const Duration(milliseconds: 300),
+          scale: _scaleNotifier.value ? 0.975 : 1,
+          duration: const Duration(milliseconds: 150),
           child: child,
         ),
       ),
