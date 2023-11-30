@@ -8,6 +8,7 @@ class ScaleAnimation extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return GestureDetector(
+      // test
       onTapDown: (details) => _scaleNotifier.change(true),
       onTapUp: (details) => _scaleNotifier.change(false),
       onTapCancel: () => _scaleNotifier.change(false),
