@@ -29,12 +29,7 @@ class _MainState extends State<Main> with SingleTickerProviderStateMixin {
     super.initState();
   }
 
-  @override
-  void dispose() {
-    _controller.dispose();
-    super.dispose();
-  }
-
+  
   @override
   Widget build(BuildContext context) {
     return const Scaffold(

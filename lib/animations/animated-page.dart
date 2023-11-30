@@ -27,6 +27,13 @@ class _AnimatedPageState extends State<AnimatedPage> with SingleTickerProviderSt
     super.initState();
   }
 
+  @override
+  void dispose() {
+    _controller.dispose();
+    super.dispose();
+  }
+
+
 
   @override
   Widget build(BuildContext context) {
