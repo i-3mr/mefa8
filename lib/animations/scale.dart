@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:hooks_riverpod/hooks_riverpod.dart';
 
 class ScaleAnimation extends StatelessWidget {
   ScaleAnimation({super.key, required this.child, required this.onTap});

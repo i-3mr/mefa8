@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:mefa8/animations/animated-page.dart';
-import 'package:mefa8/const.dart';
 import 'package:mefa8/widgets/home/index.dart';
 import 'package:mefa8/widgets/home/services.dart';
 
