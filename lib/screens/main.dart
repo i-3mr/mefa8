@@ -31,17 +31,12 @@ class _MainState extends State<Main> with SingleTickerProviderStateMixin {
 
   @override
   Widget build(BuildContext context) {
-    final width = MediaQuery.of(context).size.width;
-    final height = MediaQuery.of(context).size.height;
-
     return const Scaffold(
       body: AnimatedPage(
           child: SafeArea(
         child: Column(
           children: [
-            Center(
-              child: Text("data"),
-            ),
+            Services()
           ],
         ),
       )

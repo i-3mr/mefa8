@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:font_awesome_flutter/font_awesome_flutter.dart';
+import 'package:mefa8/const.dart';
 
 class Service extends StatelessWidget {
   const Service({super.key, required this.title});
@@ -14,9 +16,16 @@ class Service extends StatelessWidget {
         borderRadius: BorderRadius.circular(10),
         color: Colors.white,
       ),
-      child: Column(
+      child: const Column(
         children: [
-          Row(),
+          Row(
+            children: [
+              Icon(
+                FontAwesomeIcons.mapPin,
+                color: Color(Const.primaryGreen),
+              )
+            ],
+          ),
         ],
       ),
     );
