@@ -13,11 +13,15 @@ class Main extends StatelessWidget {
           child: SafeArea(
         child: Column(
           children: [
-            Services()
+            Services(),
+            Spacer(),
+            SizedBox(
+              height: 100,
+              child: BottomNavBar(index: 0),
+            )
           ],
         ),
-      )
-      ),
+      )),
     );
   }
 }
