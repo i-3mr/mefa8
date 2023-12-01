@@ -109,23 +109,26 @@ class EventWidget extends StatelessWidget {
                       color: const Color.fromARGB(255, 25, 25, 25)
                           .withOpacity(0.6),
                     ),
-                    child: Row(
-                      children: [
-                        Text(
-                          organizer,
-                          style: const TextStyle(
-                            color: Colors.white,
-                            fontSize: 16,
+                    child: Padding(
+                      padding: const EdgeInsets.only(left: 8.0),
+                      child: Row(
+                        children: [
+                          Text(
+                            organizer,
+                            style: const TextStyle(
+                              color: Colors.white,
+                              fontSize: 16,
+                            ),
                           ),
-                        ),
-                        const SizedBox(
-                          width: 5,
-                        ),
-                        CircleAvatar(
-                          radius: 15,
-                          backgroundImage: NetworkImage(organizerImageUrl),
-                        )
-                      ],
+                          const SizedBox(
+                            width: 5,
+                          ),
+                          CircleAvatar(
+                            radius: 15,
+                            backgroundImage: NetworkImage(organizerImageUrl),
+                          )
+                        ],
+                      ),
                     ),
                   ),
                 ),
@@ -135,7 +138,9 @@ class EventWidget extends StatelessWidget {
                     height: height / 4,
                     width: width - 30,
                     decoration: BoxDecoration(
-                      borderRadius: BorderRadius.circular(20),
+                      borderRadius: const BorderRadius.only(
+                          bottomLeft: Radius.circular(20),
+                          bottomRight: Radius.circular(35)),
                       color: Colors.black.withOpacity(0.3),
                     ),
                     child: Padding(
