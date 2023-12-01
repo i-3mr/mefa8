@@ -2,6 +2,7 @@ import 'dart:math';
 import 'dart:typed_data';
 
 import 'package:flutter/material.dart';
+import 'package:flutter_animate/flutter_animate.dart';
 import 'package:mefa8/const.dart';
 import 'package:mefa8/widgets/studentId/student-id.dart';
 import 'package:screen_brightness/screen_brightness.dart';
@@ -64,9 +65,9 @@ class _StudentIDScreenState extends State<StudentIDScreen> {
           child: Center(
             child: Container(
               child: Transform.scale(
-                scale: 0.95,
+                scale: 1.7,
                 child: Transform.rotate(
-                  angle: 0,
+                  angle: 3.14 / 2,
                   child: const StudentId(
                     name: "عبدالله محمد حجازي",
                     imageUrl:
@@ -77,7 +78,11 @@ class _StudentIDScreenState extends State<StudentIDScreen> {
                     nationalId: "1234567890",
                   ),
                 ),
-              ),
+              ).animate().scaleXY(
+                    begin: .8,
+                    end: 1,
+                    duration: const Duration(milliseconds: 350),
+                  ),
             ),
           ),
         ),
