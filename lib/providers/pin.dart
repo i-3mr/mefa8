@@ -4,85 +4,22 @@ import 'package:mefa8/widgets/home/service.dart';
 final pinProvider = StateNotifierProvider<PinNotifier, List<Service>>(
   (ref) => PinNotifier(const [
     Service(
-      title: "test",
+      title: "Qr Code",
       active: true,
     ),
     Service(
-      title: "test",
+      title: "955",
       active: false,
     ),
     Service(
-      title: "test",
+      title: "841",
       active: false,
     ),
     Service(
-      title: "test",
+      title: "164",
       active: false,
     ),
-    Service(
-      title: "test",
-      active: false,
-    ),
-    Service(
-      title: "test",
-      active: false,
-    ),
-    Service(
-      title: "test",
-      active: false,
-    ),
-    Service(
-      title: "test",
-      active: false,
-    ),
-    Service(
-      title: "test",
-      active: false,
-    ),
-    Service(
-      title: "test",
-      active: false,
-    ),
-    Service(
-      title: "test",
-      active: false,
-    ),
-    Service(
-      title: "test",
-      active: false,
-    ),
-    Service(
-      title: "test",
-      active: false,
-    ),
-    Service(
-      title: "test",
-      active: false,
-    ),
-    Service(
-      title: "test",
-      active: false,
-    ),
-    Service(
-      title: "test",
-      active: false,
-    ),
-    Service(
-      title: "test",
-      active: false,
-    ),
-    Service(
-      title: "test",
-      active: false,
-    ),
-    Service(
-      title: "test",
-      active: false,
-    ),
-    Service(
-      title: "test",
-      active: false,
-    ),
+
   ]),
 );
 
@@ -91,20 +28,24 @@ class PinNotifier extends StateNotifier<List<Service>> {
 
   void change(Service service, bool active) {
     int index = state.indexOf(service);
-    List<Service> newState = [];
+    List<Service> newState;
 
-    for (int i = 0; i < state.length; i++) {
-      if (i == index) {
-        service = state[i].copyWith(active: active);
-        if (active) {
-          newState.insert(0, service);
-        } else {
-          newState.insert(state.length - 1, service);
-        }
-      } else {
-        newState.add(state[i]);
-      }
+    if (active) {
+      newState = [
+        service.copyWith(active: active),
+        ...state.sublist(0, index),
+        ...state.sublist(index + 1),
+      ];
+    } else {
+      newState = [
+        ...state.sublist(0, index),
+        service.copyWith(active: active),
+        ...state.sublist(index + 1),
+      ];
     }
+
+    newState.sort((a, b) => a.active ? -1 : 1);
+
     state = [...newState];
   }
 }

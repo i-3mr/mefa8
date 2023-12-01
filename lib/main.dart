@@ -12,7 +12,7 @@ void main() {
         themeMode: ThemeMode.dark,
         darkTheme: ThemeData(
           useMaterial3: true,
-          fontFamily: GoogleFonts.kenia().fontFamily,
+          fontFamily: GoogleFonts.kadwa().fontFamily,
         ),
       ),
     ),

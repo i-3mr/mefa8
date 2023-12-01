@@ -8,16 +8,22 @@ class Main extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return const Scaffold(
+    return Scaffold(
       body: AnimatedPage(
           child: SafeArea(
         child: Column(
           children: [
-            Services(),
-            Spacer(),
-            SizedBox(
+            const ProfileHeader(
+                name: "ABDULAH HIJAZI",
+                imageUrl:
+                    "https://avatars.githubusercontent.com/u/17090794?v=4"),
+            const Expanded(
+              child: Services(),
+            ),
+            Container(
+              padding: const EdgeInsets.all(10),
               height: 100,
-              child: BottomNavBar(index: 0),
+              child: const BottomNavBar(index: 0),
             )
           ],
         ),

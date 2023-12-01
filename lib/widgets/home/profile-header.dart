@@ -39,9 +39,7 @@ class ProfileHeader extends StatelessWidget {
         ),
         child: Row(
           children: [
-            SizedBox(
-              width: 0.3 * width,
-            ),
+            Spacer(flex: 4),
             Text(
               name,
               style: const TextStyle(
@@ -50,9 +48,7 @@ class ProfileHeader extends StatelessWidget {
                 color: Colors.black,
               ),
             ),
-            SizedBox(
-              width: 0.15 * width,
-            ),
+            Spacer(flex: 3),
             ClipRRect(
               borderRadius: BorderRadius.circular(0.5 * height),
               child: Image(
@@ -62,6 +58,9 @@ class ProfileHeader extends StatelessWidget {
                 fit: BoxFit.cover,
               ),
             ),
+            Spacer(
+              flex: 1,
+            )
           ],
         ),
       ),

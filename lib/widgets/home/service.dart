@@ -51,11 +51,11 @@ class Service extends ConsumerWidget {
           Row(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
-              // const Icon(
-              //   FontAwesomeIcons.book,
-              //   color: Color(Const.primaryGreen),
-              //   size: 45,
-              // ),
+              const Icon(
+                FontAwesomeIcons.bity,
+                color: Color(Const.primaryGreen),
+                size: 65,
+              ),
               const Spacer(),
               GestureDetector(
                 onTap: () {
@@ -68,13 +68,14 @@ class Service extends ConsumerWidget {
               ),
             ],
           ),
+          SizedBox(height: 5),
           Row(
             children: [
               Center(
                 child: Text(
                   title,
                   style: const TextStyle(
-                    color: Color(Const.darkGreen),
+                    color: Color.fromARGB(255, 86, 86, 86),
                     fontWeight: FontWeight.bold,
                     fontSize: 20,
                   ),

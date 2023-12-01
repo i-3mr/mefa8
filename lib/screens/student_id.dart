@@ -1,9 +1,9 @@
-import 'dart:convert';
 import 'dart:developer';
 import 'dart:typed_data';
 
 import 'package:flutter/material.dart';
 import 'package:mefa8/const.dart';
+import 'package:mefa8/widgets/studentId/student-id.dart';
 import 'package:screen_brightness/screen_brightness.dart';
 import 'package:nfc_manager/nfc_manager.dart';
 
@@ -45,10 +45,10 @@ class _StudentIDScreenState extends State<StudentIDScreen> {
         alignment: Alignment.center,
         height: double.infinity,
         width: double.infinity,
-        decoration: BoxDecoration(
-          color: const Color(Const.primaryGreen),
+        decoration: const BoxDecoration(
+          color: Color(Const.primaryGreen),
           // borderRadius: BorderRadius.circular(20),
-          gradient: const LinearGradient(
+          gradient: LinearGradient(
             begin: Alignment.topLeft,
             end: Alignment.bottomRight,
             colors: [
@@ -57,12 +57,23 @@ class _StudentIDScreenState extends State<StudentIDScreen> {
             ],
           ),
         ),
-        child: Center(
-          child: ElevatedButton(
-            child: const Text('Set brightness to 1'),
-            onPressed: () async {
-              _ndefWrite();
-            },
+        child: SafeArea(
+          child: Center(
+            child: Container(
+              child: const Column(
+                children: [
+                  StudentId(
+                    name: "ABDULAH HIJAZI",
+                    imageUrl:
+                        "https://avatars.githubusercontent.com/u/17090794?v=4",
+                    birthDate: "1998-01-01",
+                    id: "s202044800",
+                    expireDate: "2022-01-01",
+                    bloodType: "O+",
+                  ),
+                ],
+              ),
+            ),
           ),
         ),
       ),
