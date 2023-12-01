@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:mefa8/screens/profile.dart';
 import 'package:mefa8/screens/student_id.dart';
 
 class ProfileHeader extends StatelessWidget {
@@ -15,7 +16,15 @@ class ProfileHeader extends StatelessWidget {
     return GestureDetector(
       onTap: () {
         Navigator.push(context, MaterialPageRoute(builder: (context) {
-          return const StudentIDScreen();
+          return ProfileScreen(
+            GPA: 3.98,
+            email: 's199844280@kfupm.edu.sa',
+            imageUrl: imageUrl,
+            major: 'Computer Science',
+            name: 'Abdullah hejazi',
+            phone: '0541234567',
+            remainingHours: 28,
+          );
         }));
       },
       child: Container(

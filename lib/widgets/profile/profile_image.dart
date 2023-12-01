@@ -3,10 +3,18 @@ import 'package:flutter/material.dart';
 class ProfileNameAndImage extends StatelessWidget {
   final double height;
   final String imageurl;
+  final String name;
+  final String major;
+  final double GPA;
+  final int remainingHours;
   const ProfileNameAndImage({
     super.key,
     required this.height,
     required this.imageurl,
+    required this.name,
+    required this.major,
+    required this.GPA,
+    required this.remainingHours,
   });
 
   @override
@@ -30,12 +38,12 @@ class ProfileNameAndImage extends StatelessWidget {
           const SizedBox(
             height: 20,
           ),
-          const Text(
-            "9al3ah al9l3awi",
+          Text(
+            name,
             style: TextStyle(color: Colors.white, fontSize: 30),
           ),
-          const Text(
-            "a Junior Student in Petroleum engineering",
+          Text(
+            major,
             style: TextStyle(color: Colors.white, fontSize: 15),
           ),
           const SizedBox(
@@ -47,7 +55,7 @@ class ProfileNameAndImage extends StatelessWidget {
             crossAxisAlignment: CrossAxisAlignment.center,
             children: [
               const Text(
-                "   GPA",
+                "      GPA",
                 style: TextStyle(color: Colors.white, fontSize: 30),
               ),
               Container(
@@ -65,27 +73,28 @@ class ProfileNameAndImage extends StatelessWidget {
             ],
           ),
           Padding(
-              padding: const EdgeInsets.symmetric(horizontal: 42.0),
-              child: Row(
-                mainAxisAlignment: MainAxisAlignment.spaceAround,
-                children: [
-                  const Text(
-                    "1",
-                    style: TextStyle(color: Colors.white, fontSize: 30),
+            padding: const EdgeInsets.symmetric(horizontal: 42.0),
+            child: Row(
+              mainAxisAlignment: MainAxisAlignment.spaceAround,
+              children: [
+                Text(
+                  "${GPA}",
+                  style: TextStyle(color: Colors.white, fontSize: 30),
+                ),
+                SizedBox(
+                  child: Divider(
+                    thickness: 70,
+                    height: 0,
+                    color: Colors.black.withOpacity(0.4),
                   ),
-                  SizedBox(
-                    child: Divider(
-                      thickness: 70,
-                      height: 0,
-                      color: Colors.black.withOpacity(0.4),
-                    ),
-                  ),
-                  const Text(
-                    "1",
-                    style: TextStyle(color: Colors.white, fontSize: 30),
-                  ),
-                ],
-              ))
+                ),
+                Text(
+                  "${remainingHours}",
+                  style: TextStyle(color: Colors.white, fontSize: 30),
+                ),
+              ],
+            ),
+          ),
         ],
       ),
     );

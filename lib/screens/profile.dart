@@ -4,12 +4,26 @@ import 'package:mefa8/widgets/profile/kfupmTower.dart';
 import 'package:mefa8/widgets/profile/profile_image.dart';
 
 class ProfileScreen extends StatelessWidget {
-  const ProfileScreen({super.key});
+  const ProfileScreen(
+      {super.key,
+      required this.name,
+      required this.imageUrl,
+      required this.email,
+      required this.phone,
+      required this.major,
+      required this.GPA,
+      required this.remainingHours});
+
+  final String name;
+  final String imageUrl;
+  final String email;
+  final String phone;
+  final String major;
+  final double GPA;
+  final int remainingHours;
 
   @override
   Widget build(BuildContext context) {
-    const String url =
-        "https://st2.depositphotos.com/3758943/6040/i/450/depositphotos_60400957-stock-photo-the-man-in-the-office.jpg";
     final width = MediaQuery.of(context).size.width;
     final height = MediaQuery.of(context).size.height;
     return Scaffold(
@@ -38,14 +52,18 @@ class ProfileScreen extends StatelessWidget {
             ],
           ),
         ),
-        child: const Column(
+        child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
             KFUPMTower(
               height: 450,
               widget: ProfileNameAndImage(
+                GPA: GPA,
+                major: major,
+                name: name,
+                remainingHours: remainingHours,
                 height: 450,
-                imageurl: url,
+                imageurl: imageUrl,
               ),
             ),
           ],
