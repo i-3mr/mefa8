@@ -6,10 +6,12 @@ import 'package:mefa8/const.dart';
 import 'package:mefa8/providers/pin.dart';
 
 class Service extends ConsumerWidget {
+  final String route;
   const Service({
     super.key,
     required this.title,
     required this.active,
+    this.route = '',
   });
 
   final String title;

@@ -19,7 +19,11 @@ final pinProvider = StateNotifierProvider<PinNotifier, List<Service>>(
       title: "164",
       active: false,
     ),
-
+    Service(
+      title: "exam",
+      route: "/exams",
+      active: false,
+    ),
   ]),
 );
 

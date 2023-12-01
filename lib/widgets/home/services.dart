@@ -22,7 +22,11 @@ class Services extends ConsumerWidget {
           crossAxisAlignment: WrapCrossAlignment.center,
           alignment: WrapAlignment.center,
           children: services.map((e) {
-            return ScaleAnimation(child: e, onTap: () {});
+            return ScaleAnimation(
+                child: e,
+                onTap: () {
+                  Navigator.pushNamed(context, e.route);
+                });
           }).toList(),
         ),
       ),
