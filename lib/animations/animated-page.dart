@@ -9,7 +9,8 @@ class AnimatedPage extends StatefulWidget {
   State<AnimatedPage> createState() => _AnimatedPageState();
 }
 
-class _AnimatedPageState extends State<AnimatedPage> with SingleTickerProviderStateMixin {
+class _AnimatedPageState extends State<AnimatedPage>
+    with SingleTickerProviderStateMixin {
   late AnimationController _controller;
   late Animation<double> _animation;
 
@@ -33,11 +34,9 @@ class _AnimatedPageState extends State<AnimatedPage> with SingleTickerProviderSt
     super.dispose();
   }
 
-
-
   @override
   Widget build(BuildContext context) {
-        final width = MediaQuery.of(context).size.width;
+    final width = MediaQuery.of(context).size.width;
     final height = MediaQuery.of(context).size.height;
     return Stack(
       children: [
@@ -72,7 +71,7 @@ class _AnimatedPageState extends State<AnimatedPage> with SingleTickerProviderSt
               width: width,
               decoration: BoxDecoration(
                 color: const Color(Const.primaryGreen),
-                borderRadius: BorderRadius.circular(20),
+                // borderRadius: BorderRadius.circular(20),
                 gradient: const LinearGradient(
                   begin: Alignment.topLeft,
                   end: Alignment.bottomRight,
@@ -90,4 +89,3 @@ class _AnimatedPageState extends State<AnimatedPage> with SingleTickerProviderSt
     );
   }
 }
-

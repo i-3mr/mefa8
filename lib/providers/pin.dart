@@ -102,13 +102,9 @@ class PinNotifier extends StateNotifier<List<Service>> {
           newState.insert(state.length - 1, service);
         }
       } else {
-        newState.add(state[i].copyWith(active: state[i].active));
+        newState.add(state[i]);
       }
     }
-
-
-    Future.delayed(const Duration(milliseconds: 300), () {
-      state = [...newState];
-    });
+    state = [...newState];
   }
 }
