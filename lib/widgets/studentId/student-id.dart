@@ -10,7 +10,6 @@ class StudentId extends StatelessWidget {
     required this.imageUrl,
     required this.name,
     required this.id,
-    required this.bloodType,
     required this.birthDate,
     required this.expireDate,
     required this.nationalId,
@@ -19,7 +18,6 @@ class StudentId extends StatelessWidget {
   final String imageUrl;
   final String name;
   final String id;
-  final String bloodType;
   final String birthDate;
   final String expireDate;
   final String nationalId;
@@ -31,7 +29,6 @@ class StudentId extends StatelessWidget {
     
     return Container(
       // padding: EdgeInsets.only(top: 0.2 * height),
-      height: 0.6 * height,
       decoration: BoxDecoration(
         borderRadius: BorderRadius.circular(20),
       ),

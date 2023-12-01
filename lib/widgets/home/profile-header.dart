@@ -18,12 +18,12 @@ class ProfileHeader extends StatelessWidget {
       onTap: () {
         Navigator.push(context, MaterialPageRoute(builder: (context) {
           return ProfileScreen(
-            email: 's202044280@kfupm.edu.sa',
-            GPA: 3.5,
-            imageUrl: imageUrl,
-            major: 'Computer Science',
             name: name,
-            phone: '0541234567',
+            imageUrl: imageUrl,
+            email: "s202159910@kfupm.edu.sa",
+            phone: "0540000000",
+            major: "Computer Science",
+            GPA: 3.5,
             remainingHours: 20,
           );
         }));

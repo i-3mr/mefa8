@@ -14,7 +14,7 @@ class Main extends StatelessWidget {
         child: Column(
           children: [
             const ProfileHeader(
-                name: "ABDULAH HIJAZI",
+                name: "عبدالله حجازي",
                 imageUrl:
                     "https://avatars.githubusercontent.com/u/17090794?v=4"),
             const Expanded(
