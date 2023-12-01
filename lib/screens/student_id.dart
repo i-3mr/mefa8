@@ -1,4 +1,4 @@
-import 'dart:developer';
+import 'dart:math';
 import 'dart:typed_data';
 
 import 'package:flutter/material.dart';
@@ -31,6 +31,9 @@ class _StudentIDScreenState extends State<StudentIDScreen> {
 
   @override
   Widget build(BuildContext context) {
+    final double height = MediaQuery.of(context).size.height;
+    final double width = MediaQuery.of(context).size.width;
+
     return Scaffold(
       extendBodyBehindAppBar: true,
       appBar: AppBar(
@@ -60,18 +63,21 @@ class _StudentIDScreenState extends State<StudentIDScreen> {
         child: SafeArea(
           child: Center(
             child: Container(
-              child: const Column(
-                children: [
-                  StudentId(
-                    name: "ABDULAH HIJAZI",
+              child: Transform.scale(
+                scale: 0.95,
+                child: Transform.rotate(
+                  angle: 0,
+                  child: const StudentId(
+                    name: "عبدالله محمد حجازي",
                     imageUrl:
-                        "https://avatars.githubusercontent.com/u/17090794?v=4",
+                        "https://labeeb.masdr.sa/assets/images/WelcomeAvatar.png",
                     birthDate: "1998-01-01",
-                    id: "s202044800",
-                    expireDate: "2022-01-01",
+                    id: "202044800",
+                    expireDate: '"2022 JAN"',
                     bloodType: "O+",
+                    nationalId: "1234567890",
                   ),
-                ],
+                ),
               ),
             ),
           ),
@@ -92,8 +98,8 @@ class _StudentIDScreenState extends State<StudentIDScreen> {
   void _tagRead() {
     NfcManager.instance.startSession(onDiscovered: (NfcTag tag) async {
       result.value = tag.data;
-      log(tag.data.toString());
-      log(tag.toString());
+      // log(tag.data.toString());
+      // log(tag.toString());
       NfcManager.instance.stopSession();
     });
   }
@@ -108,7 +114,7 @@ class _StudentIDScreenState extends State<StudentIDScreen> {
   }
 
   void addContact(Contact contact) async {
-    log("message !!");
+    // log("message !!");
   }
 
   void _ndefWrite() {
