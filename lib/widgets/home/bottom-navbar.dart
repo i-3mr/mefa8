@@ -6,6 +6,7 @@ import 'package:mefa8/icons/calendar_icon.dart';
 import 'package:mefa8/icons/home_icon.dart';
 import 'package:mefa8/providers/pages.dart';
 import 'package:mefa8/screens/profile.dart';
+import 'package:mefa8/screens/student_id.dart';
 import 'package:svg_flutter/svg.dart';
 
 class BottomNavBar extends StatelessWidget {
@@ -56,7 +57,7 @@ class BottomNavBar extends StatelessWidget {
               onTap: () {
                 ref.read(PagesProvider.notifier).state = 1;
                 Navigator.push(context, MaterialPageRoute(builder: (context) {
-                  return const ProfileScreen();
+                  return const StudentIDScreen();
                 }));
               },
               child: Column(

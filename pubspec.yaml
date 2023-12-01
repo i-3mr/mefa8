@@ -38,6 +38,8 @@ dependencies:
   hooks_riverpod: ^2.4.9
   google_fonts: ^6.1.0
   svg_flutter: ^0.0.1
+  screen_brightness: ^0.2.2+1
+  nfc_manager: ^3.3.0
 
 dev_dependencies:
   flutter_test:
