@@ -17,27 +17,30 @@ class Service extends ConsumerWidget {
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {
+    final height = MediaQuery.of(context).size.height;
+    final width = MediaQuery.of(context).size.width;
+
     final pin = AnimatedContainer(
-        duration: const Duration(milliseconds: 100),
-        width: 30,
-        height: 30,
-        decoration: BoxDecoration(
-          shape: BoxShape.circle,
-          color: Color(active ? Const.lightGreen : Const.lightGray),
-        ),
-        child: Icon(
-          FontAwesomeIcons.thumbtack,
-          color: Color(!active ? Const.primaryGreen : Const.gray),
-          size: 17,
-        ).animate().tint(
-              color: Color(active ? Const.primaryGreen : Const.gray),
-              duration: const Duration(milliseconds: 100),
+      duration: const Duration(milliseconds: 100),
+      width: 30,
+      height: 30,
+      decoration: BoxDecoration(
+        shape: BoxShape.circle,
+        color: Color(active ? Const.lightGreen : Const.lightGray),
+      ),
+      child: Icon(
+        FontAwesomeIcons.thumbtack,
+        color: Color(!active ? Const.primaryGreen : Const.gray),
+        size: 17,
+      ).animate().tint(
+            color: Color(active ? Const.primaryGreen : Const.gray),
+            duration: const Duration(milliseconds: 100),
           ),
     );
 
     final component = Container(
-      width: 200,
-      height: 130,
+      width: 0.455 * width,
+      height: 130 / 200 * 0.455 * width,
       padding: const EdgeInsets.all(12),
       decoration: BoxDecoration(
         borderRadius: BorderRadius.circular(15),
@@ -69,20 +72,19 @@ class Service extends ConsumerWidget {
             children: [
               Center(
                 child: Text(
-                  "$title",
-                  style: TextStyle(
-                      color: Color(Const.darkGreen),
-                      fontWeight: FontWeight.bold,
+                  title,
+                  style: const TextStyle(
+                    color: Color(Const.darkGreen),
+                    fontWeight: FontWeight.bold,
                     fontSize: 20,
                   ),
                 ),
-              )
+              ),
             ],
           )
         ],
       ),
     );
-
 
     // return component;
     return component;

@@ -47,7 +47,7 @@ class _StudentIDScreenState extends State<StudentIDScreen> {
         width: double.infinity,
         decoration: BoxDecoration(
           color: const Color(Const.primaryGreen),
-          borderRadius: BorderRadius.circular(20),
+          // borderRadius: BorderRadius.circular(20),
           gradient: const LinearGradient(
             begin: Alignment.topLeft,
             end: Alignment.bottomRight,
