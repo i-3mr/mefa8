@@ -74,7 +74,6 @@ class _StudentIDScreenState extends State<StudentIDScreen> {
                     birthDate: "1998-01-01",
                     id: "202044800",
                     expireDate: '"2022 JAN"',
-                    bloodType: "O+",
                     nationalId: "1234567890",
                   ),
                 ),

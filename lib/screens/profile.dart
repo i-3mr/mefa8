@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:mefa8/const.dart';
 import 'package:mefa8/widgets/profile/kfupmTower.dart';
 import 'package:mefa8/widgets/profile/profile_image.dart';
+import 'package:mefa8/widgets/studentId/student-id.dart';
 
 class ProfileScreen extends StatelessWidget {
   const ProfileScreen(
@@ -66,6 +67,16 @@ class ProfileScreen extends StatelessWidget {
                 imageurl: imageUrl,
               ),
             ),
+            Transform.scale(
+                scale: 0.95,
+                child: StudentId(
+                  imageUrl: imageUrl,
+                  name: name,
+                  id: "202159910",
+                  birthDate: "1998-01-01",
+                  expireDate: "2022 JAN",
+                  nationalId: "1234567890",
+                )),
           ],
         ),
       ),

@@ -40,7 +40,7 @@ class Service extends ConsumerWidget {
 
     final component = Container(
       width: 0.455 * width,
-      height: 130 / 200 * 0.455 * width,
+      height: 130 / 200 * 0.55 * width,
       padding: const EdgeInsets.all(12),
       decoration: BoxDecoration(
         borderRadius: BorderRadius.circular(15),

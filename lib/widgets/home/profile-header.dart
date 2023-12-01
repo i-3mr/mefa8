@@ -17,7 +17,15 @@ class ProfileHeader extends StatelessWidget {
     return GestureDetector(
       onTap: () {
         Navigator.push(context, MaterialPageRoute(builder: (context) {
-          return const StudentIDScreen();
+          return ProfileScreen(
+            name: name,
+            imageUrl: imageUrl,
+            email: "s202159910@kfupm.edu.sa",
+            phone: "0540000000",
+            major: "Computer Science",
+            GPA: 3.5,
+            remainingHours: 20,
+          );
         }));
       },
       child: Container(

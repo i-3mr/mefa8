@@ -17,11 +17,10 @@ class Services extends ConsumerWidget {
       padding: const EdgeInsets.all(10),
       child: SingleChildScrollView(
         child: Wrap(
-          spacing: width * 0.01,
-          runSpacing: width * 0.01,
-          crossAxisAlignment: WrapCrossAlignment.start,
-          runAlignment: WrapAlignment.spaceBetween,
-          alignment: WrapAlignment.spaceBetween,
+          spacing: width * 0.02,
+          runSpacing: width * 0.02,
+          crossAxisAlignment: WrapCrossAlignment.center,
+          alignment: WrapAlignment.center,
           children: services.map((e) {
             return ScaleAnimation(child: e, onTap: () {});
           }).toList(),
