@@ -1,20 +1,41 @@
-import 'dart:developer';
-
 import 'package:flutter/material.dart';
+import 'package:flutter_animate/flutter_animate.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
 import 'package:mefa8/const.dart';
 import 'package:mefa8/providers/pin.dart';
 
 class Service extends ConsumerWidget {
-  const Service({super.key, required this.title, required this.active});
+  const Service({
+    super.key,
+    required this.title,
+    required this.active,
+  });
 
   final String title;
   final bool active;
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {
-    return Container(
+    final pin = AnimatedContainer(
+        duration: const Duration(milliseconds: 100),
+        width: 30,
+        height: 30,
+        decoration: BoxDecoration(
+          shape: BoxShape.circle,
+          color: Color(active ? Const.lightGreen : Const.lightGray),
+        ),
+        child: Icon(
+          FontAwesomeIcons.thumbtack,
+          color: Color(!active ? Const.primaryGreen : Const.gray),
+          size: 17,
+        ).animate().tint(
+              color: Color(active ? Const.primaryGreen : Const.gray),
+              duration: const Duration(milliseconds: 100),
+          ),
+    );
+
+    final component = Container(
       width: 200,
       height: 130,
       padding: const EdgeInsets.all(12),
@@ -35,32 +56,36 @@ class Service extends ConsumerWidget {
               const Spacer(),
               GestureDetector(
                 onTap: () {
-                  log('Service onTap');
                   ref.read(pinProvider.notifier).change(this, !active);
                 },
                 child: Transform.rotate(
                   angle: 0.785398,
-                  child: AnimatedContainer(
-                    duration: const Duration(milliseconds: 500),
-                    width: 30,
-                    height: 30,
-                    decoration: BoxDecoration(
-                      shape: BoxShape.circle,
-                      color: Color(active ? Const.lightGreen : Const.lightGray),
-                    ),
-                    child: Icon(
-                      FontAwesomeIcons.thumbtack,
-                      color: Color(active ? Const.primaryGreen : Const.gray),
-                      size: 17,
-                    ),
-                  ),
+                  child: pin,
                 ),
               ),
             ],
           ),
+          Row(
+            children: [
+              Center(
+                child: Text(
+                  "$title",
+                  style: TextStyle(
+                      color: Color(Const.darkGreen),
+                      fontWeight: FontWeight.bold,
+                    fontSize: 20,
+                  ),
+                ),
+              )
+            ],
+          )
         ],
       ),
     );
+
+
+    // return component;
+    return component;
   }
 
   Service copyWith({
@@ -70,6 +95,7 @@ class Service extends ConsumerWidget {
     return Service(
       title: title ?? this.title,
       active: active ?? this.active,
+      key: UniqueKey(),
     );
   }
 }

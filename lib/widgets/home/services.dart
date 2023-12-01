@@ -9,15 +9,18 @@ class Services extends ConsumerWidget {
   @override
   Widget build(BuildContext context, WidgetRef ref) {
     final services = ref.watch(pinProvider);
-
-    return Padding(
-      padding: EdgeInsets.all(10),
-      child: Wrap(
-        spacing: 10,
-        runSpacing: 10,
-        children: services
-            .map((e) => ScaleAnimation(child: e, onTap: () {}))
-            .toList(),
+    return Expanded(
+      child: Padding(
+        padding: const EdgeInsets.all(10),
+        child: SingleChildScrollView(
+          child: Wrap(
+            spacing: 10,
+            runSpacing: 10,
+            children: services.map((e) {
+              return ScaleAnimation(child: e, onTap: () {});
+            }).toList(),
+          ),
+        ),
       ),
     );
   }

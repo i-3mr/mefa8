@@ -9,7 +9,71 @@ final pinProvider = StateNotifierProvider<PinNotifier, List<Service>>(
     ),
     Service(
       title: "test",
-      active: true,
+      active: false,
+    ),
+    Service(
+      title: "test",
+      active: false,
+    ),
+    Service(
+      title: "test",
+      active: false,
+    ),
+    Service(
+      title: "test",
+      active: false,
+    ),
+    Service(
+      title: "test",
+      active: false,
+    ),
+    Service(
+      title: "test",
+      active: false,
+    ),
+    Service(
+      title: "test",
+      active: false,
+    ),
+    Service(
+      title: "test",
+      active: false,
+    ),
+    Service(
+      title: "test",
+      active: false,
+    ),
+    Service(
+      title: "test",
+      active: false,
+    ),
+    Service(
+      title: "test",
+      active: false,
+    ),
+    Service(
+      title: "test",
+      active: false,
+    ),
+    Service(
+      title: "test",
+      active: false,
+    ),
+    Service(
+      title: "test",
+      active: false,
+    ),
+    Service(
+      title: "test",
+      active: false,
+    ),
+    Service(
+      title: "test",
+      active: false,
+    ),
+    Service(
+      title: "test",
+      active: false,
     ),
     Service(
       title: "test",
@@ -27,14 +91,24 @@ class PinNotifier extends StateNotifier<List<Service>> {
 
   void change(Service service, bool active) {
     int index = state.indexOf(service);
+    List<Service> newState = [];
 
-    state = [
-      ...state.sublist(0, index),
-      Service(
-        title: service.title,
-        active: active,
-      ),
-      ...state.sublist(index + 1),
-    ];
+    for (int i = 0; i < state.length; i++) {
+      if (i == index) {
+        service = state[i].copyWith(active: active);
+        if (active) {
+          newState.insert(0, service);
+        } else {
+          newState.insert(state.length - 1, service);
+        }
+      } else {
+        newState.add(state[i].copyWith(active: state[i].active));
+      }
+    }
+
+
+    Future.delayed(const Duration(milliseconds: 300), () {
+      state = [...newState];
+    });
   }
 }
