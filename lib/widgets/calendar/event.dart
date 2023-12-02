@@ -10,21 +10,21 @@ class EventWidget extends StatelessWidget {
   final bool isFavorite;
   final String organizer;
   final String organizerImageUrl;
-  final double height;
-  const EventWidget(
-      {super.key,
-      required this.imageUrl,
-      required this.title,
-      required this.location,
-      required this.date,
-      required this.isFavorite,
-      required this.organizer,
-      required this.organizerImageUrl,
-      this.height = 300});
+  const EventWidget({
+    super.key,
+    required this.imageUrl,
+    required this.title,
+    required this.location,
+    required this.date,
+    required this.isFavorite,
+    required this.organizer,
+    required this.organizerImageUrl,
+  });
 
   @override
   Widget build(BuildContext context) {
     double width = MediaQuery.of(context).size.width;
+    const double height = 300;
     return SizedBox(
       height: height,
       child: Column(
@@ -38,7 +38,7 @@ class EventWidget extends StatelessWidget {
                   TextSpan(
                     text: "\t\t\t\t${getCountdown(date)}",
                     style: const TextStyle(
-                      color: Colors.white,
+                      color: Colors.black,
                       fontSize: 16,
                       fontWeight: FontWeight.bold,
                     ),
@@ -49,7 +49,7 @@ class EventWidget extends StatelessWidget {
                         ? ""
                         : DateFormat('EEEE, dd MMMM').format(date),
                     style: const TextStyle(
-                      color: Color(Const.gray),
+                      color: Color.fromARGB(255, 130, 130, 130),
                       fontSize: 16,
                     ),
                   ),
@@ -101,8 +101,8 @@ class EventWidget extends StatelessWidget {
                   child: Container(
                     margin: const EdgeInsets.symmetric(
                         vertical: 10, horizontal: 10),
-                    padding:
-                        const EdgeInsets.symmetric(vertical: 2, horizontal: 2),
+                    padding: const EdgeInsets.symmetric(
+                        vertical: 2, horizontal: 2),
                     height: height / 10,
                     decoration: BoxDecoration(
                       borderRadius: BorderRadius.circular(20),

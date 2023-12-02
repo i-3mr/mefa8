@@ -41,8 +41,8 @@ class _StudentIDScreenState extends State<StudentIDScreen> {
         elevation: 0,
         backgroundColor: Colors.transparent,
         title: const Text(
-          'Student ID',
-          style: TextStyle(color: Colors.white, fontSize: 30),
+          'بطاقة الطالب',
+          style: TextStyle(color: Colors.black, fontSize: 30),
         ),
       ),
       body: Container(
@@ -50,16 +50,6 @@ class _StudentIDScreenState extends State<StudentIDScreen> {
         height: double.infinity,
         width: double.infinity,
         decoration: const BoxDecoration(
-          color: Color(Const.primaryGreen),
-          // borderRadius: BorderRadius.circular(20),
-          gradient: LinearGradient(
-            begin: Alignment.topLeft,
-            end: Alignment.bottomRight,
-            colors: [
-              Color(Const.primaryGreen),
-              Color(Const.darkGreen),
-            ],
-          ),
         ),
         child: SafeArea(
           child: Center(

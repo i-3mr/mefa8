@@ -30,6 +30,13 @@ class StudentId extends StatelessWidget {
     return Container(
       decoration: BoxDecoration(
         borderRadius: BorderRadius.circular(20),
+        boxShadow: const [
+          BoxShadow(
+            color: Color(Const.shadowGreen),
+            spreadRadius: 1,
+            blurRadius: 90, // changes position of shadow
+          ),
+        ],
       ),
       child: Stack(
         children: [

@@ -34,7 +34,6 @@ class Services extends ConsumerWidget {
               spacing: width * 0.02,
               runSpacing: width * 0.02,
               crossAxisAlignment: WrapCrossAlignment.center,
-              alignment: WrapAlignment.center,
               children: services.map((e) {
                 return ScaleAnimation(
                     child: e,
@@ -42,6 +41,10 @@ class Services extends ConsumerWidget {
                       Navigator.pushNamed(context, e.route);
                     });
               }).toList(),
+            ),
+          
+            SizedBox(
+              height: height * 0.1,
             ),
           ],
         ),

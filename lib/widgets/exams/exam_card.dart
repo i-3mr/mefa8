@@ -32,12 +32,11 @@ class ExamCard extends StatelessWidget {
       decoration: BoxDecoration(
         color: Colors.white,
         borderRadius: BorderRadius.circular(20),
-        boxShadow: [
+        boxShadow: const [
           BoxShadow(
-            color: Colors.black.withOpacity(0.2),
-            spreadRadius: 5,
-            blurRadius: 7,
-            offset: const Offset(0, 3), // changes position of shadow
+            color: Color.fromARGB(29, 0, 0, 0),
+            blurRadius: 5,
+            offset: Offset(0, 3), // changes position of shadow
           ),
         ],
       ),

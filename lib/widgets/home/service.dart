@@ -30,7 +30,10 @@ class Service extends ConsumerWidget {
       height: 30,
       decoration: BoxDecoration(
         shape: BoxShape.circle,
-        color: Color(active ? Const.lightGreen : Const.lightGray),
+        // color: Color(active ? Const.lightGreen : Const.lightGray),
+        color: active
+            ? Color.fromARGB(255, 192, 255, 213)
+            : Color.fromARGB(255, 235, 255, 241),
       ),
       child: Icon(
         FontAwesomeIcons.thumbtack,
@@ -48,18 +51,19 @@ class Service extends ConsumerWidget {
       padding: const EdgeInsets.all(12),
       decoration: BoxDecoration(
         borderRadius: BorderRadius.circular(15),
+        // color: Color(0xFFDFFDE9),
         color: Colors.white,
-        // boxShadow: const [
-        //   BoxShadow(
-        //     color: Color(Const.shadowGreen),
-        //     blurRadius: 5,
-        //     offset: Offset(0, 2),
-        //   ),
-        // ],
-        border: Border.all(
-          color: const Color(Const.shadowGreen),
-          width: 2,
-        ),
+        boxShadow: const [
+          BoxShadow(
+            color: Color.fromARGB(49, 109, 109, 109),
+            blurRadius: 5,
+            offset: Offset(0, 4),
+          ),
+        ],
+        // border: Border.all(
+        //   color: Color.fromARGB(255, 78, 78, 78),
+        //   width: 2,
+        // ),
       ),
       child: Column(
         children: [
@@ -114,6 +118,7 @@ class Service extends ConsumerWidget {
       title: title ?? this.title,
       active: active ?? this.active,
       icon: icon,
+      route: route,
       key: UniqueKey(),
     );
   }

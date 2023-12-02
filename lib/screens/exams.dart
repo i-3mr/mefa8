@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:mefa8/const.dart';
+import 'package:mefa8/widgets/blur.dart';
 import 'package:mefa8/widgets/exams/exam_card.dart';
 
 class ExamsScreen extends StatelessWidget {
@@ -10,35 +11,59 @@ class ExamsScreen extends StatelessWidget {
     return Scaffold(
       extendBodyBehindAppBar: true,
       appBar: AppBar(
+        centerTitle: true,
         backgroundColor: Colors.transparent,
-        title: const Text('Exams',
-            style: TextStyle(color: Colors.white, fontSize: 30)),
-      ),
-      body: Container(
-        alignment: Alignment.center,
-        height: double.infinity,
-        width: double.infinity,
-        decoration: BoxDecoration(
-          color: const Color(Const.primaryGreen),
-          borderRadius: BorderRadius.circular(20),
-          gradient: const LinearGradient(
-            begin: Alignment.topLeft,
-            end: Alignment.bottomRight,
-            colors: [
-              Color(Const.primaryGreen),
-              Color(Const.darkGreen),
-            ],
+        elevation: 0,
+        title: const Text(
+          'تتبع الحافلة',
+          style: TextStyle(
+            fontWeight: FontWeight.bold,
+            color: Color.fromARGB(255, 0, 0, 0),
           ),
         ),
+      ),
+      body: BlurBackGround(
         child: Container(
           margin: const EdgeInsets.only(top: 100),
-          child: ExamCard(
-              courseName: 'COE',
-              courseCode: 301,
-              examType: 'Quiz',
-              examDate: DateTime(2024, 11, 21),
-              examLocation: 'Exam Location',
-              syllabusMark: 0.3),
+          height: double.infinity,
+          child: SingleChildScrollView(
+            child: Column(
+              children: [
+                ExamCard(
+                  courseName: 'COE',
+                  courseCode: 301,
+                  examType: 'Quiz',
+                  examDate: DateTime(2023, 12, 21),
+                  examLocation: 'Exam Location',
+                  syllabusMark: 0.3,
+                ),
+                ExamCard(
+                  courseName: 'SWE',
+                  courseCode: 316,
+                  examType: 'Midterm',
+                  examDate: DateTime(2023, 12, 21),
+                  examLocation: 'المسلخ',
+                  syllabusMark: 30,
+                ),
+                ExamCard(
+                  courseName: 'Math',
+                  courseCode: 208,
+                  examType: 'Final',
+                  examDate: DateTime(2023, 12, 21),
+                  examLocation: 'Exam Location',
+                  syllabusMark: 30,
+                ),
+                ExamCard(
+                  courseName: 'COE',
+                  courseCode: 292,
+                  examType: 'Midterm',
+                  examDate: DateTime(2023, 12, 21),
+                  examLocation: 'Exam Location',
+                  syllabusMark: 40,
+                ),
+              ],
+            ),
+          ),
         ),
       ),
     );

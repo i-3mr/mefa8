@@ -5,6 +5,7 @@ import 'package:hooks_riverpod/hooks_riverpod.dart';
 import 'package:mefa8/screens/bus-tracker.dart';
 import 'package:mefa8/screens/exams.dart';
 import 'package:mefa8/screens/main.dart';
+import 'package:mefa8/screens/qr-qode.dart';
 
 void main() {
   WidgetsFlutterBinding.ensureInitialized();
@@ -28,7 +29,9 @@ void main() {
           routes: {
             '/exams': (context) => const ExamsScreen(),
             '/busTracker': (context) => const BusTracker(),
-          }),
+          '/qrCode': (context) => const QrCodeScannerScreen(),
+        },
+      ),
     ),
   );
 }
