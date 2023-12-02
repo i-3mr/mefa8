@@ -1,3 +1,4 @@
+import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
 import 'package:mefa8/widgets/home/service.dart';
 
@@ -6,23 +7,29 @@ final pinProvider = StateNotifierProvider<PinNotifier, List<Service>>(
     Service(
       title: "QR Code",
       active: true,
+      icon: FontAwesomeIcons.bus,
     ),
     Service(
       title: "955",
       active: false,
+      icon: FontAwesomeIcons.bus,
     ),
     Service(
       title: "841",
       active: false,
+      icon: FontAwesomeIcons.bus,
     ),
     Service(
-      title: "164",
+      title: "Bus Tracker",
+      route: '/busTracker',
       active: false,
+      icon: FontAwesomeIcons.bus,
     ),
     Service(
       title: "Exam Schedule",
       route: "/exams",
       active: false,
+      icon: FontAwesomeIcons.bus,
     ),
   ]),
 );
