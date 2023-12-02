@@ -28,7 +28,6 @@ class StudentId extends StatelessWidget {
     final double width = MediaQuery.of(context).size.width;
     
     return Container(
-      // padding: EdgeInsets.only(top: 0.2 * height),
       decoration: BoxDecoration(
         borderRadius: BorderRadius.circular(20),
       ),
