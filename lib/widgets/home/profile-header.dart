@@ -29,7 +29,7 @@ class _ProfileHeaderState extends State<ProfileHeader> {
     return ClipRRect(
       clipBehavior: Clip.antiAlias,
       child: AnimatedContainer(
-        duration: Duration(milliseconds: (animation ? 750 : 100)),
+        duration: Duration(milliseconds: (animation ? 750 : 0)),
         curve: animation ? Curves.fastOutSlowIn : Curves.easeIn,
         height: 0.18 * height + _currentSliderValue,
         width: width,
@@ -112,9 +112,9 @@ class _ProfileHeaderState extends State<ProfileHeader> {
               },
               child: Container(
                 width: width,
-                height: 20,
-                color: Colors.transparent,
-                alignment: Alignment.center,
+                height: 40,
+                alignment: Alignment.bottomCenter,
+                padding: const EdgeInsets.only(bottom: 10),
                 child: Container(
                   height: 5,
                   width: 50,
