@@ -28,7 +28,37 @@ class _ProfileHeaderState extends State<ProfileHeader> {
 
     return ClipRRect(
       clipBehavior: Clip.antiAlias,
-      child: AnimatedContainer(
+      child: GestureDetector(
+        onPanUpdate: (details) {
+          setState(() {
+            animation = false;
+            double dy = details.delta.dy;
+            lastDy = dy;
+
+            if (_currentSliderValue + dy < 0) return;
+
+            if (_currentSliderValue + dy > 0.70 * height && dy > 0) return;
+            _currentSliderValue = _currentSliderValue + dy;
+            // print(_currentSliderValue);
+          });
+        },
+        onPanEnd: (details) {
+          print("lastDy: $lastDy");
+          if (lastDy < 0) {
+            setState(() {
+              _currentSliderValue = 0;
+              animation = true;
+              showProfile = false;
+            });
+          } else {
+            setState(() {
+              _currentSliderValue = 0.70 * height;
+              animation = true;
+              showProfile = true;
+            });
+          }
+        },
+        child: AnimatedContainer(
         duration: Duration(milliseconds: (animation ? 750 : 0)),
         curve: animation ? Curves.fastOutSlowIn : Curves.easeIn,
         height: 0.18 * height + _currentSliderValue,
@@ -79,55 +109,23 @@ class _ProfileHeaderState extends State<ProfileHeader> {
             const Spacer(
               flex: 2,
             ),
-            GestureDetector(
-              onPanUpdate: (details) {
-                setState(() {
-                  animation = false;
-                  double dy = details.delta.dy;
-                  lastDy = dy;
-
-                  if (_currentSliderValue + dy < 0) return;
-
-                  if (_currentSliderValue + dy > 0.70 * height && dy > 0)
-                    return;
-                  _currentSliderValue = _currentSliderValue + dy;
-                  // print(_currentSliderValue);
-                });
-              },
-              onPanEnd: (details) {
-                print("lastDy: $lastDy");
-                if (lastDy < 0) {
-                  setState(() {
-                    _currentSliderValue = 0;
-                    animation = true;
-                    showProfile = false;
-                  });
-                } else {
-                  setState(() {
-                    _currentSliderValue = 0.70 * height;
-                    animation = true;
-                    showProfile = true;
-                  });
-                }
-              },
-              child: Container(
+              Container(
                 width: width,
-                height: 0.045 * height,
+                height: 0.02 * height,
                 alignment: Alignment.bottomCenter,
                 padding: const EdgeInsets.only(bottom: 10),
-                color: Colors.transparent,
                 child: Container(
                   height: 5,
                   width: 50,
                   decoration: const BoxDecoration(
                     borderRadius: BorderRadius.all(Radius.circular(10)),
                     color: Color.fromARGB(97, 158, 158, 158),
-                  ),
                 ),
               ),
             ),
           ],
         ),
+      ),
       ),
     );
   }
