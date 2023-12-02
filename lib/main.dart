@@ -15,12 +15,14 @@ void main() {
   runApp(
     ProviderScope(
       child: MaterialApp(
+          debugShowCheckedModeBanner: false,
+          debugShowMaterialGrid: false,
           home: const Main(),
           theme: ThemeData.dark(useMaterial3: true),
           themeMode: ThemeMode.dark,
           darkTheme: ThemeData(
             useMaterial3: true,
-            fontFamily: GoogleFonts.kadwa().fontFamily,
+            fontFamily: GoogleFonts.cairo().fontFamily,
           ),
           routes: {
             '/exams': (context) => const ExamsScreen(),

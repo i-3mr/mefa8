@@ -2,8 +2,9 @@ import 'package:flutter/material.dart';
 import 'package:mefa8/const.dart';
 
 class AnimatedPage extends StatefulWidget {
-  const AnimatedPage({super.key, required this.child});
+  const AnimatedPage({super.key, required this.child, required this.backWidget});
   final Widget child;
+  final Widget backWidget;
 
   @override
   State<AnimatedPage> createState() => _AnimatedPageState();
@@ -43,12 +44,7 @@ class _AnimatedPageState extends State<AnimatedPage>
         SizedBox(
           width: width,
           height: height,
-          child: const SafeArea(
-            child: Column(
-              mainAxisAlignment: MainAxisAlignment.center,
-              children: [],
-            ),
-          ),
+          child: widget.backWidget,
         ),
         Transform(
           origin: Offset(width / 2, height / 2),
@@ -65,24 +61,7 @@ class _AnimatedPageState extends State<AnimatedPage>
               }
               _controller.reverse();
             },
-            child: Container(
-              alignment: Alignment.center,
-              height: height,
-              width: width,
-              decoration: BoxDecoration(
-                color: const Color(Const.primaryGreen),
-                // borderRadius: BorderRadius.circular(20),
-                gradient: const LinearGradient(
-                  begin: Alignment.topLeft,
-                  end: Alignment.bottomRight,
-                  colors: [
-                    Color(Const.primaryGreen),
-                    Color(Const.darkGreen),
-                  ],
-                ),
-              ),
-              child: widget.child,
-            ),
+            child: widget.child,
           ),
         )
       ],

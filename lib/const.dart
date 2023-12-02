@@ -3,5 +3,6 @@ abstract class Const {
   static const darkGreen = 0xFF004A26;
   static const lightGreen = 0xFFE6F4E6;
   static const lightGray = 0xFFF3F3F3;
+  static const shadowGreen = 0xFFD2F0D2;
   static const gray = 0xFFD0D0D0;
 }

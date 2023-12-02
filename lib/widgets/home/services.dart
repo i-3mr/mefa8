@@ -15,19 +15,35 @@ class Services extends ConsumerWidget {
     return Container(
       width: double.infinity,
       padding: const EdgeInsets.all(10),
+      margin: const EdgeInsets.only(top: 10),
       child: SingleChildScrollView(
-        child: Wrap(
-          spacing: width * 0.02,
-          runSpacing: width * 0.02,
-          crossAxisAlignment: WrapCrossAlignment.center,
-          alignment: WrapAlignment.center,
-          children: services.map((e) {
-            return ScaleAnimation(
-                child: e,
-                onTap: () {
-                  Navigator.pushNamed(context, e.route);
-                });
-          }).toList(),
+        child: Column(
+          children: [
+            const Text(
+              "الخدمات",
+              style: TextStyle(
+                fontSize: 25,
+                fontWeight: FontWeight.bold,
+                color: Colors.black,
+              ),
+            ),
+            const SizedBox(
+              height: 20,
+            ),
+            Wrap(
+              spacing: width * 0.02,
+              runSpacing: width * 0.02,
+              crossAxisAlignment: WrapCrossAlignment.center,
+              alignment: WrapAlignment.center,
+              children: services.map((e) {
+                return ScaleAnimation(
+                    child: e,
+                    onTap: () {
+                      Navigator.pushNamed(context, e.route);
+                    });
+              }).toList(),
+            ),
+          ],
         ),
       ),
     );

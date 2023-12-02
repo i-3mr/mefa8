@@ -47,6 +47,17 @@ class Service extends ConsumerWidget {
       decoration: BoxDecoration(
         borderRadius: BorderRadius.circular(15),
         color: Colors.white,
+        // boxShadow: const [
+        //   BoxShadow(
+        //     color: Color(Const.shadowGreen),
+        //     blurRadius: 5,
+        //     offset: Offset(0, 2),
+        //   ),
+        // ],
+        border: Border.all(
+          color: const Color(Const.shadowGreen),
+          width: 2,
+        ),
       ),
       child: Column(
         children: [

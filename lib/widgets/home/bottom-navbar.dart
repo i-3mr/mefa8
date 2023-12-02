@@ -21,6 +21,11 @@ class BottomNavBar extends StatelessWidget {
         decoration: BoxDecoration(
           color: Colors.white,
           borderRadius: BorderRadius.circular(20),
+
+          border: Border.all(
+            color: const Color(Const.shadowGreen),
+            width: 2,
+          ),
         ),
         child: Row(
           mainAxisAlignment: MainAxisAlignment.spaceAround,
