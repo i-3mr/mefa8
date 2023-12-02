@@ -11,11 +11,13 @@ class Service extends ConsumerWidget {
     super.key,
     required this.title,
     required this.active,
+    required this.icon,
     this.route = '',
   });
 
   final String title;
   final bool active;
+  final IconData icon;
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {
@@ -64,9 +66,9 @@ class Service extends ConsumerWidget {
           Row(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
-              const Icon(
-                FontAwesomeIcons.bity,
-                color: Color(Const.primaryGreen),
+              Icon(
+                icon,
+                color: const Color(Const.primaryGreen),
                 size: 65,
               ),
               const Spacer(),
@@ -111,6 +113,7 @@ class Service extends ConsumerWidget {
     return Service(
       title: title ?? this.title,
       active: active ?? this.active,
+      icon: icon,
       key: UniqueKey(),
     );
   }

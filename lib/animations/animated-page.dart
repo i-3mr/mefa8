@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:mefa8/const.dart';
 
 class AnimatedPage extends StatefulWidget {
   const AnimatedPage({super.key, required this.child, required this.backWidget});

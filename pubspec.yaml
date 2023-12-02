@@ -42,6 +42,7 @@ dependencies:
   nfc_manager: ^3.3.0
   flutter_animate: ^4.3.0
   intl: ^0.18.1
+  percent_indicator: ^4.2.3
 
 dev_dependencies:
   flutter_test:
