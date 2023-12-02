@@ -11,31 +11,44 @@ class BusTracker extends StatelessWidget {
     final width = MediaQuery.of(context).size.width;
 
     return Scaffold(
+      appBar: AppBar(
+        centerTitle: true,
+        title: Text(
+          'تتبع الحافلة',
+          style: TextStyle(
+            // fontSize: 0.05 * height,
+            fontWeight: FontWeight.bold,
+            color: const Color.fromARGB(255, 0, 0, 0),
+          ),
+        ),
+      ),
       body: Container(
         alignment: Alignment.center,
         height: double.infinity,
         width: double.infinity,
         decoration: BoxDecoration(
-          color: const Color(Const.primaryGreen),
+          // color: const Color(Const.primaryGreen),
           borderRadius: BorderRadius.circular(20),
-          gradient: const LinearGradient(
-            begin: Alignment.topLeft,
-            end: Alignment.bottomRight,
-            colors: [
-              Color(Const.primaryGreen),
-              Color(Const.darkGreen),
-            ],
-          ),
+          // gradient: const LinearGradient(
+          //   begin: Alignment.topLeft,
+          //   end: Alignment.bottomRight,
+          //   colors: [
+          //     Color(Const.primaryGreen),
+          //     Color(Const.darkGreen),
+          //   ],
+          // ),
         ),
         child: const SafeArea(
-          child: Column(
-            children: [
-              BusTrackerComponent(busStation: ' مجمع الطلاب', time: 65),
-              BusTrackerComponent(busStation: ' العمادات', time: 125),
-              BusTrackerComponent(busStation: ' الخزان', time: 185),
-              BusTrackerComponent(busStation: 'كلية البترول ', time: 245),
-              BusTrackerComponent(busStation: 'المجمع الرياضي ', time: 305),
-            ],
+          child: SingleChildScrollView(
+            child: Column(
+              children: [
+                BusTrackerComponent(busStation: ' مجمع الطلاب', time: 65),
+                BusTrackerComponent(busStation: ' العمادات', time: 125),
+                BusTrackerComponent(busStation: ' الخزان', time: 185),
+                BusTrackerComponent(busStation: 'كلية البترول ', time: 245),
+                BusTrackerComponent(busStation: 'المجمع الرياضي ', time: 305),
+              ],
+            ),
           ),
         ),
       ),

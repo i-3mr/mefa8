@@ -20,10 +20,18 @@ class BusTrackerComponent extends StatelessWidget {
 
     return Container(
       margin: const EdgeInsets.only(top: 10),
-      height: 0.3 * width,
+      height: 0.33 * width,
       width: 0.85 * width,
       decoration: BoxDecoration(
-        borderRadius: BorderRadius.circular(20),
+        gradient: const LinearGradient(
+          begin: Alignment.topLeft,
+          end: Alignment.bottomRight,
+          colors: [
+            Color(Const.primaryGreen),
+            Color(Const.darkGreen),
+          ],
+        ),
+        borderRadius: BorderRadius.circular(12),
         boxShadow: const [
           BoxShadow(
             color: Color.fromARGB(57, 115, 115, 115),
@@ -37,47 +45,83 @@ class BusTrackerComponent extends StatelessWidget {
       child: Row(
         mainAxisAlignment: MainAxisAlignment.spaceAround,
         children: [
-          const Icon(
-            Icons.directions_bus,
-            size: 50,
-            color: Color(Const.primaryGreen),
-          ),
-          Text(
-            busStation,
-            style: const TextStyle(
-              fontWeight: FontWeight.bold,
-              fontSize: 20,
-            ),
+          Row(
+            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+            children: [
+              Container(
+                height: 0.2 * width,
+                width: 0.2 * width,
+                decoration: BoxDecoration(boxShadow: const [
+                  BoxShadow(
+                    color: Colors.white,
+                    spreadRadius: 2,
+                    offset: Offset(0, 3),
+                  ),
+                ], borderRadius: BorderRadius.circular(50)),
+                child: const Icon(
+                  Icons.directions_bus,
+                  size: 50,
+                  color: Color(Const.primaryGreen),
+                ),
+              ),
+              // as a divider
+              Container(
+                margin: const EdgeInsets.only(left: 20),
+                height: 0.2 * width,
+                width: 1,
+                color: Colors.white,
+              ),
+            ],
           ),
           Column(
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
-              const Text(
-                'الوقت المتبقي',
-                style: TextStyle(
-                  fontWeight: FontWeight.bold,
-                  fontSize: 8,
-                  color: Color(0x9F8A8A8A),
-                ),
+              Text(
+                busStation,
+                style: const TextStyle(
+                    fontWeight: FontWeight.bold,
+                    fontSize: 20,
+                    color: Colors.white),
               ),
               Countdown(
-                  seconds: time,
-                  build: (BuildContext context, double time) {
-                    if ((time / 60).toInt() == 0) {
-                      return Text(
-                        ' الحافلة وصلت',
-                        style: TextStyle(
-                          fontWeight: FontWeight.bold,
-                          fontSize: 15,
-                        ),
-                      );
-                    }
-                    return Text(
-                      ' د' + (time / 60).toInt().toString(),
-                      style: const TextStyle(
-                          fontWeight: FontWeight.bold, fontSize: 20),
+                seconds: time,
+                build: (BuildContext context, double time) {
+                  if ((time / 60).toInt() == 0) {
+                    return const Text(
+                      ' الحافلة وصلت',
+                      style: TextStyle(
+                        fontWeight: FontWeight.bold,
+                        fontSize: 10,
+                        color: Colors.white,
+                      ),
                     );
-                  }),
+                  }
+                  return Row(
+                    children: [
+                      const Text(
+                        'د',
+                        style: TextStyle(color: Colors.white, fontSize: 8),
+                      ),
+                      Text(
+                        '${(time / 60).toInt()} :',
+                        style: const TextStyle(
+                          fontWeight: FontWeight.bold,
+                          fontSize: 10,
+                          color: Colors.white,
+                        ),
+                      ),
+                      const Text(
+                        'المتبقي للوصول ',
+                        style: TextStyle(
+                          color: Colors.white,
+                          fontWeight: FontWeight.bold,
+                          fontSize: 8,
+                        ),
+                      ),
+                    ],
+                  );
+                },
+              ),
             ],
           ),
         ],
