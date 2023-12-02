@@ -2,14 +2,17 @@ import 'package:flutter/material.dart';
 import 'package:flutter_animate/flutter_animate.dart';
 import 'package:mefa8/const.dart';
 import 'package:percent_indicator/circular_percent_indicator.dart';
+import 'package:timer_count_down/timer_count_down.dart';
 
 class BusTrackerComponent extends StatelessWidget {
   const BusTrackerComponent({
     super.key,
     required this.busStation,
+    required this.time,
   });
 
   final String busStation;
+  final int time;
 
   @override
   Widget build(BuildContext context) {
@@ -46,19 +49,37 @@ class BusTrackerComponent extends StatelessWidget {
               fontSize: 20,
             ),
           ),
-          CircularPercentIndicator(
-            backgroundColor: Color(Const.lightGreen),
-            radius: 30.0,
-            lineWidth: 8.0,
-            animation: true,
-            percent: 0.7,
-            center: Text(
-              "70.0%",
-              style: TextStyle(fontWeight: FontWeight.bold, fontSize: 9.0),
-            ),
-            circularStrokeCap: CircularStrokeCap.round,
-            progressColor: Color(Const.primaryGreen),
-          )
+          Column(
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: [
+              const Text(
+                'الوقت المتبقي',
+                style: TextStyle(
+                  fontWeight: FontWeight.bold,
+                  fontSize: 8,
+                  color: Color(0x9F8A8A8A),
+                ),
+              ),
+              Countdown(
+                  seconds: time,
+                  build: (BuildContext context, double time) {
+                    if ((time / 60).toInt() == 0) {
+                      return Text(
+                        ' الحافلة وصلت',
+                        style: TextStyle(
+                          fontWeight: FontWeight.bold,
+                          fontSize: 15,
+                        ),
+                      );
+                    }
+                    return Text(
+                      ' د' + (time / 60).toInt().toString(),
+                      style: const TextStyle(
+                          fontWeight: FontWeight.bold, fontSize: 20),
+                    );
+                  }),
+            ],
+          ),
         ],
       ),
     );
