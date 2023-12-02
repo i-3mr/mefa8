@@ -5,7 +5,7 @@ import 'package:mefa8/widgets/home/service.dart';
 final pinProvider = StateNotifierProvider<PinNotifier, List<Service>>(
   (ref) => PinNotifier(const [
     Service(
-      title: "Qr Code",
+      title: "QR Code",
       active: true,
       icon: FontAwesomeIcons.bus,
     ),
@@ -26,7 +26,7 @@ final pinProvider = StateNotifierProvider<PinNotifier, List<Service>>(
       icon: FontAwesomeIcons.bus,
     ),
     Service(
-      title: "exam",
+      title: "Exam Schedule",
       route: "/exams",
       active: false,
       icon: FontAwesomeIcons.bus,

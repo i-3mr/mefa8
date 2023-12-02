@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:hooks_riverpod/hooks_riverpod.dart';
 import 'package:mefa8/const.dart';
 import 'package:mefa8/icons/calendar_icon.dart';
@@ -57,19 +58,18 @@ class BottomNavBar extends StatelessWidget {
               onTap: () {
                 ref.read(PagesProvider.notifier).state = 1;
                 Navigator.push(context, MaterialPageRoute(builder: (context) {
-                  return const CalendarScreen();
+                  return const StudentIDScreen();
                 }));
               },
               child: Column(
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
-                  SvgPicture.asset(
-                    "assets/id_card_icon.svg",
+                  Icon(
+                    FontAwesomeIcons.qrcode,
                     color: index == 1
                         ? const Color(Const.primaryGreen)
                         : Colors.grey.shade800,
-                    height: 80,
-                    width: 80,
+                    size: 45,
                   ),
                   index == 1
                       ? const CircleAvatar(
