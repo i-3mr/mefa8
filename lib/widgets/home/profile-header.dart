@@ -112,9 +112,10 @@ class _ProfileHeaderState extends State<ProfileHeader> {
               },
               child: Container(
                 width: width,
-                height: 40,
+                height: 0.045 * height,
                 alignment: Alignment.bottomCenter,
                 padding: const EdgeInsets.only(bottom: 10),
+                color: Colors.transparent,
                 child: Container(
                   height: 5,
                   width: 50,
