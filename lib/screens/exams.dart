@@ -15,7 +15,7 @@ class ExamsScreen extends StatelessWidget {
         backgroundColor: Colors.transparent,
         elevation: 0,
         title: const Text(
-          'تتبع الحافلة',
+          'مواعيد الأختبارات',
           style: TextStyle(
             fontWeight: FontWeight.bold,
             color: Color.fromARGB(255, 0, 0, 0),

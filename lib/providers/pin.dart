@@ -31,18 +31,6 @@ final pinProvider = StateNotifierProvider<PinNotifier, List<Service>>(
       active: false,
       icon: FontAwesomeIcons.award,
     ),
-    Service(
-      title: "Bus Tracker",
-      route: '/busTracker',
-      active: false,
-      icon: FontAwesomeIcons.bus,
-    ),
-    Service(
-      title: "Exam Schedule",
-      route: "/exams",
-      active: false,
-      icon: FontAwesomeIcons.pencil,
-    ),
   ]),
 );
 
